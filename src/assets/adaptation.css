@@ -1,0 +1,126 @@
+@media screen and (max-width: 1725px) {
+    .grid-adaptation {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .blocks {
+        max-width: initial !important;
+    }
+}
+
+
+@media screen and (max-width: 1289px) {
+    .grid-adaptation {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .top-block {
+        grid-column-start: 1;
+    }
+}
+
+@media screen and (max-width: 909px) {
+    .grid-adaptation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-block {
+        padding: 10px;
+    }
+
+    .anim {
+        transform: scale(0.8);
+    }
+
+    .sphere {
+        transform: scale(0.9) !important;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .grid-adaptation {
+        grid-template-columns: 1fr !important;
+    }
+
+    .top-block {
+        display: flex;
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-column: 2;
+    }
+    #container{
+        margin-top: 40px;
+    }
+    #layout {
+        padding: 12px;
+    }
+    .textm390{
+        font-size: 23px !important;
+    }
+    .m390{
+        padding-left: 5px;
+    }
+    .m390 span{
+        margin-bottom: 5px;
+    }
+    .icons-crypto{
+        transform: scale(0.8);
+    }
+    header img{
+        width: 100px !important;
+    }
+    .blocks span {
+        font-size: 14px;
+    }
+
+    .blocks {
+        height: initial;
+        padding: 10px;
+    }
+
+    .blocks p {
+        font-size: 28px;
+    }
+
+    .blocks img {
+        width: initial;
+        height: 40px;
+    }
+
+    .blocks img[alt="icon"] {
+        width: initial;
+        height: 12px;
+    }
+
+    .cont {
+        order: -1;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    .top-block-title{
+        margin-top: 20px;
+    }
+    .cont:nth-child(2) {
+        margin: 0px 10px;
+        padding: 0px 10px;
+    }
+    .top-block-wrapper{
+        margin-top: 10px;
+    }
+    
+    .sphere-container {
+        order: -1;
+        justify-content: center;
+    }
+    .sphere{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(0.8) !important;
+    }
+}
