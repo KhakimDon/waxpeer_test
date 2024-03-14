@@ -46,7 +46,7 @@ let interval = setInterval(() => {
       </div>
       <BlocksItem class="hover:scale-[0.97] hover:bg-[#181818] cursor-pointer duration-[.3s]" v-for="item of store.info" :key="item.id">
         <div class="h-[32px] w-[32px] flex items-center justify-center bg-[#262626] rounded-[50%]">
-          <img class="h-[14px] w-[14px]" :src="item.icon" alt="icon"/>
+          <img class="h-[14px] w-[14px]" src="./assets/blockIcons/uptime.svg" alt="icon"/>
         </div>
         <div class="pl-[13px] m390 w-[100%]">
           <span class="font-[Poppins] mb-[14px] font-[500] text-[16px] text-white flex items-center h-[32px] block">
