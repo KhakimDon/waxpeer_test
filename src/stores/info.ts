@@ -1,17 +1,17 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-
-
+import ability from '../services/ability';
 
 export const useStore = defineStore('store', () => {
+   
 
     // Get Date
     let date = new Date()
     let day = date.getDate()
     let month = date.getMonth().toString().length < 2 ? `0${date.getMonth() + 1}` : `${date.getMonth() + 1}`
     let year = date.getFullYear()
-    
-    // All info blocks 
+
+
     const info = [
         {
             _id: 1,
@@ -32,35 +32,35 @@ export const useStore = defineStore('store', () => {
             title: "Withdrawal status",
             subtitle: "Connected cryptocurrencies",
             icon: "src/assets/blockIcons/Subtract.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
         },
         {
             _id: 4,
             title: "Buy items",
             subtitle: "Time from the last purchase",
             icon: "src/assets/blockIcons/dollar.svg",
-            bottom: [``,`25 sec`],
+            bottom: [``, `25 sec`],
         },
         {
             _id: 5,
             title: "Waxpeer pay bots",
             subtitle: "The number of avaliable bots on Wxpeer pay",
             icon: "src/assets/blockIcons/waxpeer.svg",
-            bottom: [``,`259 bots`],
+            bottom: [``, `259 bots`],
         },
         {
             _id: 6,
             title: "Waxpeer pay",
             subtitle: "The last successful trade",
             icon: "src/assets/blockIcons/123.svg",
-            bottom: [``,`10 sec`],
+            bottom: [``, `10 sec`],
         },
         {
             _id: 7,
             title: "Availability of a site",
             subtitle: "The availability of the home page of the site",
             icon: "src/assets/blockIcons/12345.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
             status: "available",
             color: "#20CE70"
         },
@@ -69,7 +69,7 @@ export const useStore = defineStore('store', () => {
             title: "Server status",
             subtitle: "The status of the website servers",
             icon: "src/assets/blockIcons/cloud_queue.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
             status: "unstable",
             color: "#EC7A2A"
         },
@@ -78,7 +78,7 @@ export const useStore = defineStore('store', () => {
             title: "Steam Web API",
             subtitle: "Last check June 3, 2022 02:50:16",
             icon: "src/assets/blockIcons/123456.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
             status: "stable",
             color: "#20CE70"
         },
@@ -87,14 +87,14 @@ export const useStore = defineStore('store', () => {
             title: "API response",
             subtitle: "Last request 10 seconds ago",
             icon: "src/assets/blockIcons/settings.svg",
-            bottom: [``,`2.856 ms`],
+            bottom: [``, `2.856 ms`],
         },
         {
             _id: 11,
             title: "Last trade",
             subtitle: "The last trade was created 5s ago",
             icon: "src/assets/blockIcons/2214.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
             status: "canceled",
             color: "#EF5858"
         },
@@ -103,11 +103,14 @@ export const useStore = defineStore('store', () => {
             title: "Login",
             subtitle: "Shows either your login is working or not",
             icon: "src/assets/blockIcons/1234.svg",
-            bottom: [``,``],
+            bottom: [``, ``],
             status: "active",
             color: "#20CE70"
         },
     ]
+
+   
+    
 
     const waxpeer_status = {
         title: "Waxpeer online & status",
@@ -118,5 +121,19 @@ export const useStore = defineStore('store', () => {
         }
     }
 
-    return { info,waxpeer_status }
+
+    // console.log($ability);
+
+
+    const users = [{ userId: 1, rank: 'user' }, { userId: 2, rank: 'admin' }]
+    
+    let currentUser = null
+    for(let i of users) if(window.location.pathname.split('=')[1] == i.userId) currentUser = i
+    
+    // let filtered = users.filter((item,index) => ability.can("read", item, 'index' ))
+
+   
+
+    return { info, waxpeer_status, users,currentUser }
 })
+

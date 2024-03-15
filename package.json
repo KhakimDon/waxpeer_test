@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@casl/ability": "^6.7.0",
+    "@casl/vue": "^2.2.2",
     "apexcharts": "^3.47.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
